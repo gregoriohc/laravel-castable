@@ -30,7 +30,13 @@ In Laravel 5.5 the package will autoregister the service provider. In Laravel 5.
 
 ## Usage
 
-Add `HasCustomCasts` trait to your the model you want to add custom attribute casting (if you want to use it in all your models, I suggest adding it to a base model).
+### With Castable base model
+
+The fastest way is using `\Gregoriohc\Castable\CustomCastableModel` as your base model.
+
+### Without Castable base model
+
+Add `HasCustomCasts` trait to your the model you want to add custom attribute casting (if you want to use it in all your models, I suggest adding it to your own base model).
 
 Override `castAttribute` model method:
  
@@ -87,7 +93,11 @@ class Place extends \Illuminate\Database\Eloquent\Model
 }
 ```
 
-Depending on the custom caster, the attribute will accept different values. For example, for the point caster, you can do the following:
+### Attribute migration, setting and getting
+
+Depending on the custom caster, the attribute will accept and return different values when setting/getting. Also, the required database migration type will differ.
+
+For example, for the point caster requires a `Point` database migration type, and to set its value you can do the following:
 
 ``` php
 $place->location = [12.345, 67.890];
@@ -129,9 +139,9 @@ After that, add the custom caster to the config file:
 ``` php
 // config/castable.php
 'casters' => [
-    // ...
+    ...
     'serializable' => \App\Casters\SerializableObject::class,
-    // ...
+    ...
 ];
 ```
 
