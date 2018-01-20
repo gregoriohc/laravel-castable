@@ -1,24 +1,35 @@
 {
   "name": "gregoriohc/laravel-castable",
+  "type": "library",
   "description": "Laravel package that adds custom casts for models attributes",
-  "keywords": ["laravel", "package", "properties", "attributes", "model", "cast"],
+  "keywords": [
+    "gregoriohc",
+    "castable",
+    "laravel",
+    "properties",
+    "attributes",
+    "model",
+    "cast"
+  ],
   "homepage": "https://github.com/gregoriohc/laravel-castable",
   "license": "MIT",
   "authors": [
     {
       "name": "Gregorio Hernández Caso",
-      "email": "gregoriohc@gmail.com"
+      "email": "gregoriohc@gmail.com",
+      "homepage": "https://github.com/gregoriohc",
+      "role": "Developer"
     }
   ],
   "require": {
-    "php": ">=7.0.0",
-    "illuminate/support": "5.5.*|5.6.*",
-    "illuminate/database": "5.5.*|5.6.*",
+    "php" : "~5.6|~7.0",
+    "illuminate/support": "^5.0,<5.6",
+    "illuminate/database": "^5.0,<5.6",
     "spinen/laravel-geometry": "^0.6.0"
   },
   "require-dev": {
-    "phpunit/phpunit": "~6.0",
-    "mockery/mockery": "~1.0",
+    "phpunit/phpunit" : ">=4.0",
+    "squizlabs/php_codesniffer": "^2.3",
     "codeclimate/php-test-reporter": "dev-master"
   },
   "autoload": {
@@ -31,12 +42,22 @@
       "Gregoriohc\\Castable\\Tests\\": "tests"
     }
   },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "phpunit --coverage-html coverage"
+  },
   "extra": {
     "laravel": {
       "providers": [
         "Gregoriohc\\Castable\\ServiceProvider"
-      ]
+      ],
+      "aliases": {
+        "Skeleton": "Gregoriohc\\Castable\\Facade"
+      }
     }
+  },
+  "config": {
+    "sort-packages": true
   },
   "minimum-stability": "dev",
   "prefer-stable": true
