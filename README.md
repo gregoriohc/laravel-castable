@@ -95,7 +95,7 @@ class Place extends \Illuminate\Database\Eloquent\Model
 
 ### Attribute migration, setting and getting
 
-Depending on the custom caster, the attribute will accept and return different values when setting/getting. Also, the required database migration type will differ.
+Depending on the custom caster, the attribute will accept and return different values when setting/getting. Also, the required database migration type will differ. For the included casters, you can see the doc in the caster class file.
 
 For example, for the point caster requires a `Point` database migration type, and to set its value you can do the following:
 
@@ -132,7 +132,7 @@ class SerializableObject extends \Gregoriohc\Castable\Casters\Caster
 }
 ```
 
-The `as` method must transform the value from the database to the php model, and the `from` method must do the opposite thing.
+The `as` method must transform the raw attribute value (from the database or internal) to the usable model attribute, and the `from` method must do the opposite thing.
 
 After that, add the custom caster to the config file:
 
