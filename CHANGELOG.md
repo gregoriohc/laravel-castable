@@ -21,3 +21,15 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Readme update
 - Custom castable base model
 - Casters documentation
+
+## 2.0.0 - 2018-01-21
+
+### Added
+- Refactoring
+- Testing
+- Readme update
+
+## 2.0.1 - 2018-01-21
+
+### Added
+- Custom casted objects attributes toArray

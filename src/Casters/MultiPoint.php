@@ -7,14 +7,14 @@ namespace Gregoriohc\Castable\Casters;
  *
  * Set values:
  * - Array of arrays of two float numbers. Ex.: [[12.345, 67.890], [12.345, 67.890]]
- * - \Spinen\Geometry\Geometries\MultiPoint object
+ * - \Gregoriohc\Castable\Types\MultiPoint object
  *
  * Get values:
- * - \Spinen\Geometry\Geometries\MultiPoint object
+ * - \Gregoriohc\Castable\Types\MultiPoint object
  *
  * Database accepted types:
  * - MultiPoint
  */
-class MultiPoint extends Geometry
+class MultiPoint extends GeometryCaster
 {
 }

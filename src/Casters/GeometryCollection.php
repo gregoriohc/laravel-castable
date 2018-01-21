@@ -6,14 +6,14 @@ namespace Gregoriohc\Castable\Casters;
  * GeometryCollection caster
  *
  * Set values:
- * - \Spinen\Geometry\Geometries\GeometryCollection object
+ * - \Gregoriohc\Castable\Types\GeometryCollection object
  *
  * Get values:
- * - \Spinen\Geometry\Geometries\GeometryCollection object
+ * - \Gregoriohc\Castable\Types\GeometryCollection object
  *
  * Database accepted types:
  * - GeometryCollection
  */
-class GeometryCollection extends Geometry
+class GeometryCollection extends GeometryCaster
 {
 }

@@ -15,4 +15,9 @@ class CustomCastableModel extends \Illuminate\Database\Eloquent\Model
     {
         return parent::setAttribute($key, $value)->customSetAttribute($key, $value);
     }
+
+    public function toArray()
+    {
+        return $this->customToArray(parent::toArray());
+    }
 }

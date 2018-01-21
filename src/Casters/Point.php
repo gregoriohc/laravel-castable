@@ -7,14 +7,14 @@ namespace Gregoriohc\Castable\Casters;
  *
  * Set values:
  * - Array of two float numbers. Ex.: [12.345, 67.890]
- * - \Spinen\Geometry\Geometries\Point object
+ * - \Gregoriohc\Castable\Types\Point object
  *
  * Get values:
- * - \Spinen\Geometry\Geometries\Point object
+ * - \Gregoriohc\Castable\Types\Point object
  *
  * Database accepted types:
  * - Point
  */
-class Point extends Geometry
+class Point extends GeometryCaster
 {
 }
