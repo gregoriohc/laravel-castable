@@ -6,15 +6,15 @@ namespace Gregoriohc\Castable\Casters;
  * MultiLineString caster
  *
  * Set values:
- * - Array of arrays of multiple float numbers. Ex.: [[12.345, 67.890, 12.345, 67.890], [67.890, 12.345, 67.890, 12.345]]
- * - \Spinen\Geometry\Geometries\MultiLineString object
+ * - Array of array of arrays of two float numberss. Ex.: [[[12.345, 67.890], [34.345, 89.890]], [[12.345, 67.890], [34.345, 89.890]]]
+ * - \Gregoriohc\Castable\Types\MultiLineString object
  *
  * Get values:
- * - \Spinen\Geometry\Geometries\MultiLineString object
+ * - \Gregoriohc\Castable\Types\MultiLineString object
  *
  * Database accepted types:
  * - MultiLineString
  */
-class MultiLineString extends Geometry
+class MultiLineString extends GeometryCaster
 {
 }

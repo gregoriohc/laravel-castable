@@ -6,15 +6,15 @@ namespace Gregoriohc\Castable\Casters;
  * LineString caster
  *
  * Set values:
- * - Array of multiple float numbers. Ex.: [12.345, 67.890, 12.345, 67.890]
- * - \Spinen\Geometry\Geometries\LineString object
+ * - Array of arrays of two float numbers. Ex.: [[12.345, 67.890], [34.345, 89.890]]
+ * - \Gregoriohc\Castable\Types\LineString object
  *
  * Get values:
- * - \Spinen\Geometry\Geometries\LineString object
+ * - \Gregoriohc\Castable\Types\LineString object
  *
  * Database accepted types:
  * - LineString
  */
-class LineString extends Geometry
+class LineString extends GeometryCaster
 {
 }

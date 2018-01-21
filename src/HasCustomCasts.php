@@ -3,6 +3,7 @@
 namespace Gregoriohc\Castable;
 
 use Gregoriohc\Castable\Casters\Caster;
+use Gregoriohc\Castable\Exceptions\CasterException;
 
 trait HasCustomCasts
 {
@@ -21,19 +22,15 @@ trait HasCustomCasts
      */
     public function getCustomCaster($key)
     {
-        if (!$this->isCustomCastable($key)) {
-            return null;
-        }
-
         $casters = config('castable.casters', []);
 
         $caster = $casters[$this->casts[$key]];
 
         if (!class_exists($caster)) {
-            return null;
+            throw CasterException::classNotExists($caster);
         }
 
-        return new $caster();
+        return new $caster($key, $this);
     }
 
     /**
