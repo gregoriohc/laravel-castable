@@ -39,6 +39,25 @@ class ModelTest extends BaseTest
         $this->assertEquals($model->other, null);
     }
 
+    public function testToArray()
+    {
+        $model = new Dummy();
+
+        $model->name = 'Test';
+        $this->assertEquals($model->name, 'Test');
+
+        $model->location = [1, 2];
+        $this->assertInstanceOf(\Gregoriohc\Castable\Types\Point::class, $model->location);
+
+        $this->assertEquals($model->toArray(), [
+            'name' => 'Test',
+            'location' => [
+                'type' => 'Point',
+                'coordinates' => [1, 2],
+            ],
+        ]);
+    }
+
     public function testFailSettingWrongAttributeValue()
     {
         $model = new Dummy();

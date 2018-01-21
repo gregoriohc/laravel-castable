@@ -56,6 +56,15 @@ public function setAttribute($key, $value)
 }
 ```
 
+Override `toArray` model method:
+ 
+``` php
+public function toArray()
+{
+    return $this->customToArray(parent::toArray());
+}
+```
+
 Add custom casted attributes to the model casts array:
  
 ``` php
@@ -89,6 +98,11 @@ class Place extends \Illuminate\Database\Eloquent\Model
     public function setAttribute($key, $value)
     {
         return parent::setAttribute($key, $value)->customSetAttribute($key, $value);
+    }
+    
+    public function toArray()
+    {
+        return $this->customToArray(parent::toArray());
     }
 }
 ```

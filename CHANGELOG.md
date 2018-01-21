@@ -28,3 +28,8 @@ Updates should follow the [Keep a CHANGELOG](http://keepachangelog.com/) princip
 - Refactoring
 - Testing
 - Readme update
+
+## 2.0.1 - 2018-01-21
+
+### Added
+- Custom casted objects attributes toArray

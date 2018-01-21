@@ -68,4 +68,22 @@ trait HasCustomCasts
 
         return $this;
     }
+
+    /**
+     * @return array
+     */
+    public function customToArray($data)
+    {
+        foreach (array_keys($data) as $attribute) {
+            if ($this->isCustomCastable($attribute)) {
+                $value = $this->$attribute;
+                if (is_object($value) && method_exists($value, 'toArray')) {
+                    $value = $value->toArray();
+                    $data[$attribute] = $value;
+                }
+            }
+        }
+
+        return $data;
+    }
 }

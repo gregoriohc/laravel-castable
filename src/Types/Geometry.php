@@ -2,7 +2,9 @@
 
 namespace Gregoriohc\Castable\Types;
 
-abstract class Geometry
+use Illuminate\Contracts\Support\Arrayable;
+
+abstract class Geometry implements Arrayable
 {
     /**
      * @var array
@@ -66,4 +68,14 @@ abstract class Geometry
     {
         return call_user_func_array([$this->proxyGeometry, $name], $arguments);
     }
+
+    /**
+     * @return array
+     */
+    public function toArray()
+    {
+        return $this->proxyGeometry->toArray();
+    }
+
+
 }
