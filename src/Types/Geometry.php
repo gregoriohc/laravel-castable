@@ -31,7 +31,7 @@ abstract class Geometry implements Arrayable
      */
     private function updateGeometryFromCoordinates()
     {
-        $this->proxyGeometry = \Geo::parse(json_encode([
+        $this->proxyGeometry = \Geo::parseJson(json_encode([
             'type' => class_basename($this),
             'coordinates' => $this->coordinates,
         ]));

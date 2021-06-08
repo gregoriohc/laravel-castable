@@ -22,13 +22,12 @@
     }
   ],
   "require": {
-    "php" : "~5.6|~7.0",
-    "illuminate/support": "~5.0",
-    "illuminate/database": "~5.0",
-    "spinen/laravel-geometry": "^1.0.0"
+    "php" : "~5.6|~7.0|~8.0",
+    "illuminate/support": "~5.0|~6.0|~7.0|~8.0",
+    "illuminate/database": "~5.0|~6.0|~7.0|~8.0",
+    "spinen/laravel-geometry": "~1.0|~2.0"
   },
   "require-dev": {
-    "codeclimate/php-test-reporter": "dev-master",
     "orchestra/testbench": "~3.0",
     "phpunit/phpunit": ">=4.0",
     "squizlabs/php_codesniffer": "^2.3"

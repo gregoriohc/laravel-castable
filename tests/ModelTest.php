@@ -29,7 +29,7 @@ class ModelTest extends BaseTest
         $model->path = [[1, 2], [3, 4]];
         $this->assertInstanceOf(\Gregoriohc\Castable\Types\LineString::class, $model->path);
 
-        $model->area = [[1, 2], [3, 4], [5, 6]];
+        $model->area = [[[1, 2], [3, 4], [5, 6]]];
         $this->assertInstanceOf(\Gregoriohc\Castable\Types\Polygon::class, $model->area);
 
         $model->other = 'Foo';
@@ -82,19 +82,19 @@ class ModelTest extends BaseTest
     {
         $model = new Dummy();
 
-        $location = \Geo::parse(json_encode([
+        $location = \Geo::parseJson(json_encode([
             'type' => 'Point',
             'coordinates' => [1, 2],
         ]));
 
-        $path = \Geo::parse(json_encode([
+        $path = \Geo::parseJson(json_encode([
             'type' => 'LineString',
             'coordinates' => [[1, 2], [3, 4]],
         ]));
 
-        $area = \Geo::parse(json_encode([
+        $area = \Geo::parseJson(json_encode([
             'type' => 'Polygon',
-            'coordinates' => [[1, 2], [3, 4], [5, 6]],
+            'coordinates' => [[[1, 2], [3, 4], [5, 6]]],
         ]));
 
         $model->setRawAttributes([
